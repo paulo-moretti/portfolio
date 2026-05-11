@@ -593,9 +593,9 @@
             <h2 class="text-4xl font-bold mb-4 gradient-text text-center"
                 x-text="language === 'en' ? 'Featured Projects' : 'Projetos em Destaque'"></h2>
             <p class="text-center text-gray-500 text-sm mb-16"
-                x-text="language === 'en' ? 'A selection of personal and client projects' : 'Uma seleção de projetos pessoais e para clientes'"></p>
+                x-text="language === 'en' ? 'A selection of personal projects' : 'Uma seleção de projetos pessoais'"></p>
 
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
 
                 <!-- Organizze -->
                 <div class="card rounded-2xl overflow-hidden flex flex-col">
@@ -649,30 +649,6 @@
                     </div>
                 </div>
 
-                <!-- Paris Perfumes -->
-                <div class="card rounded-2xl overflow-hidden flex flex-col">
-                    <div class="proj-header proj-paris h-44 flex items-center justify-center">
-                        <i class="fas fa-shopping-bag text-5xl text-amber-400/30"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <h3 class="text-base font-bold text-white mb-2">Paris Perfumes Imports</h3>
-                        <p class="text-gray-400 text-sm mb-4 flex-1 leading-relaxed"
-                            x-text="language === 'en'
-                                ? 'Luxury e-commerce for imported perfumes with WooCommerce, product catalog, filters and secure payment gateway.'
-                                : 'E-commerce de perfumes importados com WooCommerce, catálogo de produtos, filtros e gateway de pagamento seguro.'"></p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-tag">WordPress</span>
-                            <span class="skill-tag">WooCommerce</span>
-                            <span class="skill-tag">Elementor Pro</span>
-                        </div>
-                        <a href="https://parisperfumesimports.com/" target="_blank"
-                            class="inline-flex items-center gap-2 text-sm accent-text hover:opacity-70 transition-opacity">
-                            <i class="fas fa-external-link-alt text-xs"></i>
-                            <span x-text="language === 'en' ? 'Visit live site' : 'Visitar site'"></span>
-                        </a>
-                    </div>
-                </div>
-
                 <!-- Combinador de Holerites -->
                 <div class="card rounded-2xl overflow-hidden flex flex-col">
                     <div class="proj-header proj-holerites h-44 flex items-center justify-center">
@@ -693,30 +669,6 @@
                             class="inline-flex items-center gap-2 text-sm accent-text hover:opacity-70 transition-opacity">
                             <i class="fab fa-github"></i>
                             <span x-text="language === 'en' ? 'View on GitHub' : 'Ver no GitHub'"></span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Rodrigo Pereira Videomaker -->
-                <div class="card rounded-2xl overflow-hidden flex flex-col">
-                    <div class="proj-header proj-rodrigo h-44 flex items-center justify-center">
-                        <i class="fas fa-video text-5xl text-purple-400/30"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <h3 class="text-base font-bold text-white mb-2">Rodrigo Pereira Videomaker</h3>
-                        <p class="text-gray-400 text-sm mb-4 flex-1 leading-relaxed"
-                            x-text="language === 'en'
-                                ? 'Portfolio website for a professional videomaker showcasing services and work history. Fully responsive.'
-                                : 'Site de portfólio para videomaker profissional com apresentação de serviços e trabalhos realizados. Totalmente responsivo.'"></p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS</span>
-                            <span class="skill-tag">JavaScript</span>
-                        </div>
-                        <a href="https://www.rodrigopereiravideomaker.com.br/" target="_blank"
-                            class="inline-flex items-center gap-2 text-sm accent-text hover:opacity-70 transition-opacity">
-                            <i class="fas fa-external-link-alt text-xs"></i>
-                            <span x-text="language === 'en' ? 'Visit live site' : 'Visitar site'"></span>
                         </a>
                     </div>
                 </div>
