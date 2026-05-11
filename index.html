@@ -249,11 +249,7 @@
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Django</span>
                         <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">REST API</span>
-                        <span class="skill-tag">Celery</span>
                     </div>
                 </div>
 
@@ -268,9 +264,9 @@
                         <span class="skill-tag">HTML5</span>
                         <span class="skill-tag">CSS3</span>
                         <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Tailwind CSS</span>
                         <span class="skill-tag">WordPress</span>
                         <span class="skill-tag">WooCommerce</span>
+                        <span class="skill-tag">Elementor Pro</span>
                     </div>
                 </div>
 
@@ -283,10 +279,8 @@
                             x-text="language === 'en' ? 'Databases' : 'Banco de Dados'"></h3>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">PostgreSQL</span>
                         <span class="skill-tag">MySQL</span>
                         <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Redis</span>
                     </div>
                 </div>
 
@@ -316,7 +310,6 @@
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="skill-tag">AWS EC2</span>
-                        <span class="skill-tag">Docker</span>
                         <span class="skill-tag">Linux</span>
                         <span class="skill-tag">Git / GitHub</span>
                         <span class="skill-tag">Active Directory</span>
@@ -334,9 +327,8 @@
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="skill-tag">Monday CRM</span>
-                        <span class="skill-tag">Elementor Pro</span>
                         <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">Windows Server</span>
+                        <span class="skill-tag">Word</span>
                         <span class="skill-tag">WSL</span>
                     </div>
                 </div>
@@ -361,17 +353,55 @@
                             <div>
                                 <h3 class="text-base font-bold text-white"
                                     x-text="language === 'en' ? 'IT Support Analyst' : 'Analista de Suporte'"></h3>
-                                <p class="accent-text text-sm font-medium mt-0.5">GP Assessor</p>
+                                <p class="accent-text text-sm font-medium mt-0.5">Grupo Assessor</p>
                             </div>
                             <span class="text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full"
-                                x-text="language === 'en' ? '2025 – Present' : '2025 – Atual'"></span>
+                                x-text="language === 'en' ? 'May 2026 – Present' : 'Mai 2026 – Atual'"></span>
                         </div>
-                        <p class="text-gray-400 text-sm leading-relaxed" x-show="language === 'pt'">
-                            Atendimento e resolução de chamados técnicos, suporte a infraestrutura de rede e sistemas internos, gerenciamento de usuários e equipamentos de TI.
-                        </p>
-                        <p class="text-gray-400 text-sm leading-relaxed" x-show="language === 'en'">
-                            Technical helpdesk, ticket management, network infrastructure and internal systems support, user and IT equipment management.
-                        </p>
+                        <ul class="text-gray-400 text-sm leading-relaxed space-y-2" x-show="language === 'pt'">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Suporte técnico e atendimento a clientes e usuários dos sistemas implantados, com registro e controle de atendimentos realizados e pendentes.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Apoio no processo de implantação de softwares e capacitação de clientes para utilização de novos sistemas e versões.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Identificação e encaminhamento de problemas e dúvidas para os analistas de requisitos de desenvolvimento.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Testes em ambientes controlados, simulação de problemas e apoio na atualização e documentação de versões.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Levantamento de informações junto aos usuários e elaboração de relatórios de atendimento.
+                            </li>
+                        </ul>
+                        <ul class="text-gray-400 text-sm leading-relaxed space-y-2" x-show="language === 'en'">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Technical support and customer service for deployed software systems, with tracking of completed and pending tickets.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Support in software implementation and customer training for new systems and version rollouts.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Problem identification and escalation to development requirements analysts.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Testing in controlled environments, problem simulation and version update support.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                User information gathering and support report drafting.
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -538,13 +568,18 @@
                         <p class="text-gray-400 text-sm leading-relaxed mb-3" x-show="language === 'en'">
                             E-commerce for natural products: responsive frontend, MySQL database and WhatsApp integration for order finalization.
                         </p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="flex flex-wrap gap-2 mb-3">
                             <span class="skill-tag">HTML</span>
                             <span class="skill-tag">CSS</span>
                             <span class="skill-tag">Python</span>
                             <span class="skill-tag">Flask</span>
                             <span class="skill-tag">MySQL</span>
                         </div>
+                        <a href="https://www.sabordoreino.com.br/" target="_blank"
+                            class="inline-flex items-center gap-1 text-xs accent-text hover:opacity-70 transition-opacity">
+                            <i class="fas fa-external-link-alt text-xs"></i>
+                            <span x-text="language === 'en' ? 'Visit live site' : 'Visitar site'"></span>
+                        </a>
                     </div>
                 </div>
 
