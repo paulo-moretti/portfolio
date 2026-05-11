@@ -9,34 +9,34 @@
     <link rel="icon" type="image/png" href="dist/images/logo_softpro.png">
     <link rel="apple-touch-icon" href="dist/images/logo_softpro.png">
 
-    <meta property="og:title" content="Paulo Moretti - Desenvolvedor Full-Stack">
-    <meta property="og:description" content="Olá, eu sou o Paulo Eduardo Moretti! Desenvolvedor full stack apaixonado por programação e tecnologia. Sempre estou em busca de novos desafios e aprendizados para expandir meus conhecimentos. Aqui você encontrará projetos em que estou trabalhando e contribuições para a comunidade.">
-    <meta property="og:image" content="dist/images/logo_softpro.png">
-    <meta property="og:url" content="https://..."> 
-    <meta property="og:type" content="website">    
+    <meta property="og:title" content="Paulo Moretti — Automação & Infraestrutura">
+    <meta property="og:description" content="Desenvolvedor com foco em automação de processos, infraestrutura cloud e DevOps. Python · Django · AWS · Playwright.">
+    <meta property="og:image" content="dist/images/Foto Paulo 2.png">
+    <meta property="og:url" content="https://paulo-moretti.github.io/portfolio">
+    <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Paulo Moretti - Desenvolvedor Full-Stack">
-    <meta name="twitter:description" content="Olá, eu sou o Paulo Eduardo Moretti! Desenvolvedor full stack apaixonado por programação e tecnologia. Sempre estou em busca de novos desafios e aprendizados para expandir meus conhecimentos. Aqui você encontrará projetos em que estou trabalhando e contribuições para a comunidade.">
-    <meta name="twitter:image" content="dist/images/logo_softpro.png">
+    <meta name="twitter:title" content="Paulo Moretti — Automação & Infraestrutura">
+    <meta name="twitter:description" content="Desenvolvedor com foco em automação de processos, infraestrutura cloud e DevOps. Python · Django · AWS · Playwright.">
+    <meta name="twitter:image" content="dist/images/Foto Paulo 2.png">
 
     <meta name="author" content="Paulo Moretti">
-    <meta name="keywords" content="Desenvolvedor Full-Stack, Python, JavaScript, HTML, CSS, React, FastAPI, MySQL, Flask, Git, GitHub, AWS (AD)">
+    <meta name="keywords" content="Python, Django, AWS, Playwright, Automação, Infraestrutura, DevOps, SRE, Flask, PostgreSQL, Linux, Docker">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0f172a">
 
-    <title>Paulo Moretti - Desenvolvedor Full-Stack</title>
+    <title>Paulo Moretti — Automação & Infraestrutura</title>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <script src="js/language_switcher.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js" defer></script>
 </head>
 
-<body class="bg-gradient-to-r from-blue-900 via-purple-800 to-blue-900 min-h-screen text-gray-300" 
-    x-data="{ 
+<body class="min-h-screen text-gray-300"
+    x-data="{
         language: getBrowserLanguage(),
         menuOpen: false,
         scrolled: false,
@@ -44,8 +44,6 @@
             window.addEventListener('scroll', () => {
                 this.scrolled = window.scrollY > 100;
             });
-            
-            // Fecha o menu ao clicar fora
             document.addEventListener('click', (e) => {
                 if (this.menuOpen && !e.target.closest('.mobile-menu-container')) {
                     this.menuOpen = false;
@@ -53,163 +51,177 @@
             });
         }
     }">
-    
+
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-gradient border-b border-white/5">
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-bg border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <a href="index.html#" class="text-2xl font-bold gradient-text">PM</a>
+                <a href="#" class="text-2xl font-bold gradient-text">PM</a>
 
-                <!-- Language Switcher -->
                 <div class="language-switcher hidden md:flex gap-2">
-                    <button @click="language = 'en'"
-                        :class="{ 'language-button' : true, 'active': language === 'en' }">EN</button>
-                    <button @click="language = 'pt'"
-                        :class="{ 'language-button' : true, 'active': language === 'pt' }">PT</button>
+                    <button @click="language = 'en'" :class="{ 'language-button': true, 'active': language === 'en' }">EN</button>
+                    <button @click="language = 'pt'" :class="{ 'language-button': true, 'active': language === 'pt' }">PT</button>
                 </div>
 
-    <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html#about" class="nav-link">
-                        <span x-text="language === 'en' ? 'About' : 'Sobre'"></span>
-                    </a>
-                    <a href="index.html#experience" class= "nav-link">
-                        <span x-text="language === 'en' ? 'Experience' : 'Experiências'"></span>
-                    </a>
-                    <a href="index.html#projects" class= "nav-link">
-                        <span x-text="language === 'en' ? 'Projects' : 'Projetos'"></span>
-                    </a>
-                    <a href="index.html#contact" class="nav-link">
-                        <span x-text="language === 'en' ? 'Contact' : 'Contato'"></span>
-                    </a>
-                    <button
-                        @click="downloadCV()"
-                        class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300">
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#about" class="nav-link"><span x-text="language === 'en' ? 'About' : 'Sobre'"></span></a>
+                    <a href="#skills" class="nav-link"><span x-text="language === 'en' ? 'Skills' : 'Habilidades'"></span></a>
+                    <a href="#experience" class="nav-link"><span x-text="language === 'en' ? 'Experience' : 'Experiências'"></span></a>
+                    <a href="#projects" class="nav-link"><span x-text="language === 'en' ? 'Projects' : 'Projetos'"></span></a>
+                    <a href="#certifications" class="nav-link"><span x-text="language === 'en' ? 'Certs' : 'Certificações'"></span></a>
+                    <a href="#contact" class="nav-link"><span x-text="language === 'en' ? 'Contact' : 'Contato'"></span></a>
+                    <button @click="downloadCV()"
+                        class="px-4 py-2 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/20 rounded-full transition-all duration-300 text-sm text-cyan-400">
                         <span x-text="language === 'en' ? 'Download CV' : 'Baixar CV'"></span>
                     </button>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <button @click.stop="menuOpen = !menuOpen" class="md:hidden">
-                    <i class="fas" :class="menuOpen ? 'fa-times' : 'fa-bars'"></i>
+                <button @click.stop="menuOpen = !menuOpen" class="md:hidden text-gray-400">
+                    <i class="fas text-xl" :class="menuOpen ? 'fa-times' : 'fa-bars'"></i>
                 </button>
             </div>
 
             <!-- Mobile Menu -->
-            <div x-show="menuOpen" 
+            <div x-show="menuOpen"
                 x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0 -translate-y-4" 
+                x-transition:enter-start="opacity-0 -translate-y-4"
                 x-transition:enter-end="opacity-100 translate-y-0"
                 @click.away="menuOpen = false"
                 class="md:hidden py-4 mobile-menu-container">
                 <div class="flex flex-col space-y-4">
-                    <a href="index.html#about" @click="menuOpen = false" class="nav-link" 
-                        x-text="language === 'en' ? 'About' : 'Sobre'"></a>
-                    <a href="index.html#experience" @click="menuOpen = false" class="nav-link"
-                        x-text="language === 'en' ? 'Experience' : 'Experiência'"></a>
-                    <a href="index.html#projects" @click="menuOpen = false" class= "nav-link" 
-                        x-text="language === 'en' ? 'Projects' : 'Projetos'"></a>
-                    <a href="index.html#contact" @click="menuOpen = false" class="nav-link" 
-                        x-text="language === 'en' ? 'Contact' : 'Contato'"></a>
-                    <button
-                        @click="downloadCV(); menuOpen = false"
-                        class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300">
+                    <a href="#about" @click="menuOpen = false" class="nav-link" x-text="language === 'en' ? 'About' : 'Sobre'"></a>
+                    <a href="#skills" @click="menuOpen = false" class="nav-link" x-text="language === 'en' ? 'Skills' : 'Habilidades'"></a>
+                    <a href="#experience" @click="menuOpen = false" class="nav-link" x-text="language === 'en' ? 'Experience' : 'Experiências'"></a>
+                    <a href="#projects" @click="menuOpen = false" class="nav-link" x-text="language === 'en' ? 'Projects' : 'Projetos'"></a>
+                    <a href="#certifications" @click="menuOpen = false" class="nav-link" x-text="language === 'en' ? 'Certifications' : 'Certificações'"></a>
+                    <a href="#contact" @click="menuOpen = false" class="nav-link" x-text="language === 'en' ? 'Contact' : 'Contato'"></a>
+                    <button @click="downloadCV(); menuOpen = false"
+                        class="px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-sm text-cyan-400 text-left">
                         <span x-text="language === 'en' ? 'Download CV' : 'Baixar CV'"></span>
                     </button>
                 </div>
                 <div class="mt-4 flex justify-center">
                     <div class="language-switcher">
-                        <button @click="language = 'en'"
-                            :class="{ 'language-button': true, 'active' : language === 'en' }">EN</button>
-                        <button @click="language = 'pt'"
-                            :class="{ 'language-button': true, 'active' : language === 'pt' }">PT</button>
+                        <button @click="language = 'en'" :class="{ 'language-button': true, 'active': language === 'en' }">EN</button>
+                        <button @click="language = 'pt'" :class="{ 'language-button': true, 'active': language === 'pt' }">PT</button>
                     </div>
                 </div>
             </div>
         </div>
-    </nav> 
+    </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <header class="min-h-screen flex items-center justify-center pt-20 profile-gradient relative">
         <div class="max-w-7xl mx-auto px-6 py-20 text-center">
-            <div class="mb-12 relative">
+            <div class="mb-10 relative inline-block">
                 <img src="dist/images/Foto Paulo 2.png" alt="Paulo Eduardo Moretti"
-                    class="w-48 h-48 rounded-full mx-auto object-cover border-2 border-white/10">
-                <div class="absolute inset-0 rounded-full bg-blue-500/20 blur-xl -z-10"></div>
+                    class="w-40 h-40 rounded-full mx-auto object-cover border-2 border-cyan-500/30 shadow-profile">
+                <div class="absolute inset-0 rounded-full bg-cyan-500/5 blur-2xl -z-10 scale-150"></div>
             </div>
 
-            <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">
-                Paulo Moretti
-            </h1>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 gradient-text">Paulo Moretti</h1>
 
-            <p class="text-xl md:text-2xl mb-12 text-gray-400" x-text="language === 'en' ? 'Full-Stack Developer' : 'Desenvolvedor Full-Stack'"></p>
+            <p class="text-base md:text-lg mb-4 text-gray-400 tracking-widest uppercase"
+                x-text="language === 'en' ? 'Automation · Infrastructure · DevOps' : 'Automação · Infraestrutura · DevOps'"></p>
 
-            <div class="flex justify-center space-x-8">
+            <p class="text-sm md:text-base mb-10 text-gray-500 max-w-xl mx-auto leading-relaxed"
+                x-text="language === 'en'
+                    ? 'Computer Science student transitioning to Infrastructure Management, Automation and SRE. Python, Django, AWS, Playwright.'
+                    : 'Estudante de Ciência da Computação em transição para Gestão de Infraestrutura, Automação e SRE. Python, Django, AWS, Playwright.'">
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
                 <a href="https://github.com/paulo-moretti" target="_blank"
-                    class="text-3xl hover:text-white transition-colors duration-300">
+                    class="flex items-center gap-2 px-6 py-3 card rounded-full text-sm hover:border-cyan-500/40">
                     <i class="fab fa-github"></i>
+                    <span>GitHub</span>
                 </a>
                 <a href="https://www.linkedin.com/in/paulo-eduardo-moretti-a9845924b" target="_blank"
-                    class="text-3xl hover:text-white transition-colors duration-300">
+                    class="flex items-center gap-2 px-6 py-3 card rounded-full text-sm hover:border-cyan-500/40">
                     <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
                 </a>
+                <button @click="downloadCV()"
+                    class="flex items-center gap-2 px-6 py-3 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-sm text-cyan-400 hover:bg-cyan-500/20 transition-all">
+                    <i class="fas fa-download"></i>
+                    <span x-text="language === 'en' ? 'Download CV' : 'Baixar CV'"></span>
+                </button>
             </div>
+
+            <a href="#about" class="text-gray-600 hover:text-cyan-400 transition-colors duration-300 animate-bounce inline-block">
+                <i class="fas fa-chevron-down text-xl"></i>
+            </a>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="py-12">
+    <!-- About -->
+    <section id="about" class="py-20">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-4xl font-bold mb-16 gradient-text text-center"
                 x-text="language === 'en' ? 'About Me' : 'Sobre Mim'"></h2>
 
-            <div class="grid md:grid-cols-2 gap-16">
+            <div class="grid md:grid-cols-2 gap-12">
                 <div class="space-y-6">
-                    <p class="text-lg leading-relaxed" x-show="language === 'en'">
-                        Born in Araçatuba, a strategic city in the countryside of São Paulo, I began my programming journey at the age of 16. Passionate about Python and technology, I'm constantly seeking growth and new challenges. I believe true development comes from constant curiosity and the drive to turn ideas into real-world solutions.
+                    <p class="text-lg leading-relaxed text-gray-400" x-show="language === 'en'">
+                        Born in Araçatuba, São Paulo, I started programming at 16. Today I work with infrastructure, process automation and web development — always driven by curiosity and the goal of building efficient, real-world solutions. I'm actively transitioning toward Infrastructure Management, Automation and SRE.
                     </p>
-                    <p class="text-lg leading-relaxed" x-show="language === 'pt'">
-                        Nascido em Araçatuba, uma cidade estratégica do interior paulista, comecei minha trajetória na programação aos 16 anos. Apaixonado por Python e tecnologia, estou constantemente em busca de evolução e novos desafios. Acredito que o crescimento vem da curiosidade constante e da vontade de transformar ideias em soluções reais.
+                    <p class="text-lg leading-relaxed text-gray-400" x-show="language === 'pt'">
+                        Natural de Araçatuba (SP), comecei a programar aos 16 anos. Hoje atuo com infraestrutura, automação de processos e desenvolvimento web — movido pela curiosidade e pelo objetivo de construir soluções eficientes e reais. Estou em transição ativa para a área de Gestão de Infraestrutura, Automação e SRE.
                     </p>
 
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="card p-6 rounded-2xl">
-                            <div class="text-4xl font-bold mb-2">1+</div>
-                            <div class="text-gray-400" x-text="language === 'en' ? 
-                                'Years Experience' : 'Anos de Experiência'"></div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="card p-6 rounded-2xl text-center">
+                            <div class="text-4xl font-bold mb-1 gradient-text">2+</div>
+                            <div class="text-gray-500 text-sm" x-text="language === 'en' ? 'Years Experience' : 'Anos de Experiência'"></div>
                         </div>
-                        <div class="card p-6 rounded-2xl">
-                            <div class="text-4xl font-bold mb-2">20+</div>
-                            <div class="text-gray-400" x-text="language === 'en' ? 
-                                'Projects Completed' : 'Projetos Concluídos'"></div>
+                        <div class="card p-6 rounded-2xl text-center">
+                            <div class="text-4xl font-bold mb-1 gradient-text">10+</div>
+                            <div class="text-gray-500 text-sm" x-text="language === 'en' ? 'Projects Delivered' : 'Projetos Entregues'"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="space-y-6">
-                    <div class="card p-6 rounded-2xl">
-                        <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 
-                            'Education' : 'Educação'"></h3>
-                        <div class="space-y-4">
-                            <div>
-                                <p class="font-medium">Bacharel em Ciência da Computação</p>
-                                <p class="text-gray-400">Universidade Paulista, 2024-2027</p>
-                            </div>
-                        </div>
+                <div class="space-y-4">
+                    <div class="card p-5 rounded-2xl">
+                        <h3 class="text-sm font-bold mb-3 flex items-center gap-2 text-white">
+                            <i class="fas fa-graduation-cap accent-text"></i>
+                            <span x-text="language === 'en' ? 'Education' : 'Formação'"></span>
+                        </h3>
+                        <p class="font-medium text-white text-sm">
+                            <span x-text="language === 'en' ? 'Bachelor in Computer Science' : 'Bacharelado em Ciência da Computação'"></span>
+                        </p>
+                        <p class="text-gray-500 text-xs mt-1">Universidade Paulista (UNIP) — 2024–2027</p>
+                        <p class="text-gray-600 text-xs mt-2"
+                            x-text="language === 'en'
+                                ? 'Data Structures · Algorithms · Databases · AI · Networks · OS'
+                                : 'Estruturas de Dados · Algoritmos · Banco de Dados · IA · Redes · S.O.'"></p>
                     </div>
 
-                    <div class="card p-6 rounded-2xl">
-                        <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 
-                        'Languages' : 'Idiomas'"></h3>
-                        <div class="space-y-4">
+                    <div class="card p-5 rounded-2xl">
+                        <h3 class="text-sm font-bold mb-3 flex items-center gap-2 text-white">
+                            <i class="fas fa-bullseye accent-text"></i>
+                            <span x-text="language === 'en' ? 'Objective' : 'Objetivo'"></span>
+                        </h3>
+                        <p class="text-gray-400 text-sm"
+                            x-text="language === 'en'
+                                ? 'Transition from development to Infrastructure Management, Automation and SRE.'
+                                : 'Migrar de Desenvolvimento para Gestão de Infraestrutura, Automação e SRE.'"></p>
+                    </div>
+
+                    <div class="card p-5 rounded-2xl">
+                        <h3 class="text-sm font-bold mb-3 flex items-center gap-2 text-white">
+                            <i class="fas fa-language accent-text"></i>
+                            <span x-text="language === 'en' ? 'Languages' : 'Idiomas'"></span>
+                        </h3>
+                        <div class="space-y-2">
                             <div class="flex justify-between items-center">
-                                <span>Português</span>
-                                <span class="text-gray-400">Nativo</span>
+                                <span class="text-sm text-gray-300">Português</span>
+                                <span class="text-xs text-gray-500 bg-white/5 px-2 py-0.5 rounded-full"
+                                    x-text="language === 'en' ? 'Native' : 'Nativo'"></span>
                             </div>
                             <div class="flex justify-between items-center">
-                                <span>Inglês</span>
-                                <span class="text-gray-400">Básico</span>
+                                <span class="text-sm text-gray-300">Inglês</span>
+                                <span class="text-xs text-gray-500 bg-white/5 px-2 py-0.5 rounded-full">A1</span>
                             </div>
                         </div>
                     </div>
@@ -218,210 +230,636 @@
         </div>
     </section>
 
-    <section id="experience" class="py-12">
+    <!-- Skills -->
+    <section id="skills" class="py-20">
         <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-4 gradient-text text-center"
+                x-text="language === 'en' ? 'Skills' : 'Habilidades'"></h2>
+            <p class="text-center text-gray-500 text-sm mb-16"
+                x-text="language === 'en' ? 'Technologies and tools I work with' : 'Tecnologias e ferramentas que utilizo'"></p>
+
+            <div class="grid md:grid-cols-3 gap-5">
+
+                <div class="card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="skill-icon-wrap">
+                            <i class="fab fa-python accent-text"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-sm">Backend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">REST API</span>
+                        <span class="skill-tag">Celery</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="skill-icon-wrap">
+                            <i class="fab fa-html5 accent-text"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-sm">Frontend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">WordPress</span>
+                        <span class="skill-tag">WooCommerce</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="skill-icon-wrap">
+                            <i class="fas fa-database accent-text"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-sm"
+                            x-text="language === 'en' ? 'Databases' : 'Banco de Dados'"></h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Redis</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="skill-icon-wrap">
+                            <i class="fas fa-robot accent-text"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-sm"
+                            x-text="language === 'en' ? 'Automation' : 'Automação'"></h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Playwright</span>
+                        <span class="skill-tag">Appium</span>
+                        <span class="skill-tag">ADB</span>
+                        <span class="skill-tag">Web Scraping</span>
+                        <span class="skill-tag">RabbitMQ</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="skill-icon-wrap">
+                            <i class="fab fa-aws accent-text"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-sm">Infra & DevOps</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">AWS EC2</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Git / GitHub</span>
+                        <span class="skill-tag">Active Directory</span>
+                        <span class="skill-tag">Kubernetes</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="skill-icon-wrap">
+                            <i class="fas fa-tools accent-text"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-sm"
+                            x-text="language === 'en' ? 'Tools' : 'Ferramentas'"></h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Monday CRM</span>
+                        <span class="skill-tag">Elementor Pro</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Windows Server</span>
+                        <span class="skill-tag">WSL</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
             <h2 class="text-4xl font-bold mb-16 gradient-text text-center"
-                x-text="language === 'en' ? 'Work Experience' : 'Experiência Profissional'">
-            </h2>
-            <div class="space-y-12">
+                x-text="language === 'en' ? 'Experience' : 'Experiência'"></h2>
+
+            <div class="timeline">
+
+                <!-- GP Assessor -->
+                <div class="timeline-item mb-8">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 rounded-2xl">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-3">
+                            <div>
+                                <h3 class="text-base font-bold text-white"
+                                    x-text="language === 'en' ? 'IT Support Analyst' : 'Analista de Suporte'"></h3>
+                                <p class="accent-text text-sm font-medium mt-0.5">GP Assessor</p>
+                            </div>
+                            <span class="text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full"
+                                x-text="language === 'en' ? '2025 – Present' : '2025 – Atual'"></span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed" x-show="language === 'pt'">
+                            Atendimento e resolução de chamados técnicos, suporte a infraestrutura de rede e sistemas internos, gerenciamento de usuários e equipamentos de TI.
+                        </p>
+                        <p class="text-gray-400 text-sm leading-relaxed" x-show="language === 'en'">
+                            Technical helpdesk, ticket management, network infrastructure and internal systems support, user and IT equipment management.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paris Perfumes -->
+                <div class="timeline-item mb-8">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 rounded-2xl">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-3">
+                            <div>
+                                <h3 class="text-base font-bold text-white"
+                                    x-text="language === 'en' ? 'Web Developer (Freelancer)' : 'Desenvolvedor Web (Freelancer)'"></h3>
+                                <p class="accent-text text-sm font-medium mt-0.5">Paris Perfumes Imports</p>
+                            </div>
+                            <span class="text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full"
+                                x-text="language === 'en' ? 'Aug–Sep 2025' : 'Ago–Set 2025'"></span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4" x-show="language === 'pt'">
+                            E-commerce de perfumes importados com WooCommerce e Elementor Pro. Interface responsiva otimizada para SEO, catálogo com filtros, carrinho interativo e checkout seguro com gateway de pagamento.
+                        </p>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4" x-show="language === 'en'">
+                            E-commerce for imported perfumes using WooCommerce and Elementor Pro. SEO-optimized responsive interface, product catalog with filters, interactive cart and secure payment checkout.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="skill-tag">WordPress</span>
+                            <span class="skill-tag">WooCommerce</span>
+                            <span class="skill-tag">Elementor Pro</span>
+                            <span class="skill-tag">Hostinger</span>
+                        </div>
+                        <a href="https://parisperfumesimports.com/" target="_blank"
+                            class="inline-flex items-center gap-1 text-xs accent-text hover:opacity-70 transition-opacity">
+                            <i class="fas fa-external-link-alt text-xs"></i>
+                            <span x-text="language === 'en' ? 'Visit live site' : 'Visitar site'"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Rodrigo Pereira -->
+                <div class="timeline-item mb-8">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 rounded-2xl">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-3">
+                            <div>
+                                <h3 class="text-base font-bold text-white"
+                                    x-text="language === 'en' ? 'Web Developer (Freelancer)' : 'Desenvolvedor Web (Freelancer)'"></h3>
+                                <p class="accent-text text-sm font-medium mt-0.5">Rodrigo Pereira Videomaker</p>
+                            </div>
+                            <span class="text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full"
+                                x-text="language === 'en' ? 'Jul–Aug 2025' : 'Jul–Ago 2025'"></span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-3" x-show="language === 'pt'">
+                            Site estático de portfólio para videomaker profissional com design responsivo, apresentação de serviços e trabalhos realizados.
+                        </p>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-3" x-show="language === 'en'">
+                            Static portfolio website for a professional videomaker with responsive design and work showcase.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                        <a href="https://www.rodrigopereiravideomaker.com.br/" target="_blank"
+                            class="inline-flex items-center gap-1 text-xs accent-text hover:opacity-70 transition-opacity">
+                            <i class="fas fa-external-link-alt text-xs"></i>
+                            <span x-text="language === 'en' ? 'Visit live site' : 'Visitar site'"></span>
+                        </a>
+                    </div>
+                </div>
 
                 <!-- Nitatori Advogados -->
-                <div class= "card bg-white/10 backdrop-blur-lg p-8 shadow-lg rounded-2xl">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold">Desenvolvedor Full-Stack</h3>
-                            <a>Nitatori Advogados</a>
-                            <p class="mt-4 text-gray-400 whitespace-pre-line"
-                              x-html="language === 'en' ? 
-                                  `Leadership in Technological Strategies: Leading team-based technological initiatives,
-                                   focusing on developing innovative and scalable solutions in internal automation.
-                                   Responsible for improvements that increased manufacturing efficiency by 70% and significantly accelerated the company's operational processes.` : 
-                                   `Liderança em Estratégias Tecnológicas: Atuação na liderança de iniciativas tecnológicas em equipe,
-                                    com foco no desenvolvimento de soluções inovadoras e escaláveis em automações internas. 
-                                    Responsável por melhorias que aumentaram em 70% a eficiência da manufatura e aceleraram significativamente os processos operacionais da empresa.`">
-                            </p>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">HTML</span>
-                                <span class="skill-tag">AWS - AD</span>
-                                <span class="skill-tag">CSS</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">MySQL</span>
+                <div class="timeline-item mb-8">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 rounded-2xl">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-3">
+                            <div>
+                                <h3 class="text-base font-bold text-white"
+                                    x-text="language === 'en' ? 'IT Intern' : 'Estagiário de TI'"></h3>
+                                <p class="accent-text text-sm font-medium mt-0.5">Nitatori Advogados</p>
                             </div>
+                            <span class="text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full"
+                                x-text="language === 'en' ? 'Aug 2024 – 2025' : 'Ago 2024 – 2025'"></span>
                         </div>
-                        <span class="text-gray-400"
-                            x-text="language === 'en' ? 'Aug 2024 - Present' : 'Ago 2024 - Atual'">
+                        <ul class="text-gray-400 text-sm leading-relaxed space-y-2 mb-4" x-show="language === 'pt'">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Gerenciamento de instâncias EC2 na AWS para execução de cálculos automatizados com controle de custos via ligar/desligar conforme demanda.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Automações internas com Python e Playwright para web scraping e processos administrativos repetitivos.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Administração de Active Directory: upgrade de servidores, gerenciamento de IPs, CRUD de usuários e controle de acesso a arquivos em rede.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Gestão do CRM Monday: criação de fluxos, integrações e usuários para otimização da comunicação interna.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Desenvolvimento de sistema interno de chamados com Kanban para gerenciamento de tarefas da equipe de TI.
+                            </li>
+                        </ul>
+                        <ul class="text-gray-400 text-sm leading-relaxed space-y-2 mb-4" x-show="language === 'en'">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                AWS EC2 management for automated calculations with cost control via scheduled on/off.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Internal automation with Python and Playwright for web scraping and repetitive administrative tasks.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Active Directory administration: server upgrades, IP management, user CRUD and network access control.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Monday CRM management: workflow creation, integrations and user setup.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-chevron-right accent-text text-xs mt-1 flex-shrink-0"></i>
+                                Internal Kanban ticket system development for IT team task management.
+                            </li>
+                        </ul>
+                        <div class="p-3 rounded-xl mb-4 result-box">
+                            <p class="text-sm" x-show="language === 'pt'">
+                                <span class="accent-text font-semibold">Resultado:</span>
+                                <span class="text-gray-300"> Automações implementadas geraram redução de custos e aumento de eficiência operacional de até <strong>70%</strong>.</span>
+                            </p>
+                            <p class="text-sm" x-show="language === 'en'">
+                                <span class="accent-text font-semibold">Result:</span>
+                                <span class="text-gray-300"> Implemented automations led to cost reduction and up to <strong>70%</strong> operational efficiency increase.</span>
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Playwright</span>
+                            <span class="skill-tag">AWS EC2</span>
+                            <span class="skill-tag">Active Directory</span>
+                            <span class="skill-tag">Monday CRM</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Flask</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sabor do Reino -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 rounded-2xl">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-3">
+                            <div>
+                                <h3 class="text-base font-bold text-white"
+                                    x-text="language === 'en' ? 'Web Developer (Freelancer)' : 'Desenvolvedor Web (Freelancer)'"></h3>
+                                <p class="accent-text text-sm font-medium mt-0.5">Sabor do Reino</p>
+                            </div>
+                            <span class="text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full"
+                                x-text="language === 'en' ? 'Jul–Aug 2024' : 'Jul–Ago 2024'"></span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-3" x-show="language === 'pt'">
+                            E-commerce para venda de produtos naturais: frontend responsivo, banco de dados MySQL e integração com WhatsApp para finalização de pedidos.
+                        </p>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-3" x-show="language === 'en'">
+                            E-commerce for natural products: responsive frontend, MySQL database and WhatsApp integration for order finalization.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-4 gradient-text text-center"
+                x-text="language === 'en' ? 'Featured Projects' : 'Projetos em Destaque'"></h2>
+            <p class="text-center text-gray-500 text-sm mb-16"
+                x-text="language === 'en' ? 'A selection of personal and client projects' : 'Uma seleção de projetos pessoais e para clientes'"></p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- Organizze -->
+                <div class="card rounded-2xl overflow-hidden flex flex-col">
+                    <div class="proj-header proj-organizze h-44 flex items-center justify-center">
+                        <i class="fas fa-ticket-alt text-5xl text-cyan-400/30"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="text-base font-bold text-white">Organizze</h3>
+                            <span class="text-xs px-2 py-0.5 rounded-full border badge-dev"
+                                x-text="language === 'en' ? 'In Dev' : 'Em Dev'"></span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-1 leading-relaxed"
+                            x-text="language === 'en'
+                                ? 'Multi-tenant SaaS for internal helpdesk with ticket management, dashboard, audit log and real-time notifications.'
+                                : 'SaaS multi-tenant para gestão interna de chamados com tickets, dashboard, audit log e notificações em tempo real.'"></p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="skill-tag">Django 5.1</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">Celery</span>
+                            <span class="skill-tag">Docker</span>
+                        </div>
+                        <span class="inline-flex items-center gap-1 text-xs text-gray-600">
+                            <i class="fas fa-lock text-xs"></i>
+                            <span x-text="language === 'en' ? 'Private repository' : 'Repositório privado'"></span>
                         </span>
                     </div>
                 </div>
 
-                <!-- Experiencias Futuras -->
-                <!-- Experiencias Futuras -->
-                <!-- Experiencias Futuras -->
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-12">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-16 gradient-text text-center"
-                x-text="language === 'en' ? 'Featured Projects' : 'Projetos em Destaque'"></h2>
-            <div class="grid md:grid-cols-4 gap-8">
-
-                <!-- Appium Automtion -->
-                <div class="card rounded-2xl overflow-hidden">
-                    <img src="dist/images/projects/boton-sou-gov.png" alt="Automação Android" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Automação Android</h3>
-                        <p class="text-gray-400 mb-4" x-text="language === 'en' ? 
-                        'Application for monitoring parliamentary spending' : 
-                        'Aplicação para monitoramento de gastos parlamentares'"></p>
+                <!-- Ghost of Gov -->
+                <div class="card rounded-2xl overflow-hidden flex flex-col">
+                    <img src="dist/images/projects/boton-sou-gov.png" alt="Ghost of Gov" class="w-full h-44 object-cover">
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-base font-bold text-white mb-2">Ghost of Gov</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-1 leading-relaxed"
+                            x-text="language === 'en'
+                                ? 'Process automation for SouGov portal: login, navigation and data collection via Playwright. Web interface with background execution.'
+                                : 'Automação de processos no portal SouGov: login, navegação e coleta de dados via Playwright. Interface web com execução em background.'"></p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Appium</span>
-                            <span class="skill-tag">Android Studio</span>
+                            <span class="skill-tag">Playwright</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Flask</span>
                         </div>
-                        <a href="https://www.linkedin.com/posts/paulo-eduardo-moretti-a9845924b_python-appium-automaaexaeto-activity-7312841225542238209-Uk1u?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3TN9QBM-y6PRvxy5dOZnWDOSg0oCuGiyA" target="_blank"
-                            class="inline-flex items-center text-white hover:text-gray-300">
-                            <span x-text="language === 'en' ? 'View Project' : 'Ver Projeto'"></span>
-                            <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="https://github.com/paulo-moretti/Ghost_of_Gov" target="_blank"
+                            class="inline-flex items-center gap-2 text-sm accent-text hover:opacity-70 transition-opacity">
+                            <i class="fab fa-github"></i>
+                            <span x-text="language === 'en' ? 'View on GitHub' : 'Ver no GitHub'"></span>
                         </a>
                     </div>
                 </div>
 
-                <!-- RabbitMQ -->
-                <div class="card rounded-2xl overflow-hidden">
-                    <img src="dist/images/projects/rabbitMQ.png" alt="criptografia" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Criptografia</h3>
-                        <p class="text-gray-400 mb-4" x-text="language === 'en' ? 
-                        'encrypted chat conversation using RabbitMQ' : 
-                        'chat de conversa criptografado, usando rabbitMQ'"></p>
+                <!-- Paris Perfumes -->
+                <div class="card rounded-2xl overflow-hidden flex flex-col">
+                    <div class="proj-header proj-paris h-44 flex items-center justify-center">
+                        <i class="fas fa-shopping-bag text-5xl text-amber-400/30"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-base font-bold text-white mb-2">Paris Perfumes Imports</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-1 leading-relaxed"
+                            x-text="language === 'en'
+                                ? 'Luxury e-commerce for imported perfumes with WooCommerce, product catalog, filters and secure payment gateway.'
+                                : 'E-commerce de perfumes importados com WooCommerce, catálogo de produtos, filtros e gateway de pagamento seguro.'"></p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">rabbitMQ</span>
-                            <span class="skill-tag">pika</span>
+                            <span class="skill-tag">WordPress</span>
+                            <span class="skill-tag">WooCommerce</span>
+                            <span class="skill-tag">Elementor Pro</span>
                         </div>
-                        <a href="https://github.com/LuanMedeiross/rabbitMQ-python" target= "_blank"
-                            class="inline-flex items-center text-white hover:text-gray-300">
-                            <span x-text="language === 'en' ? 'View Project' : 'Ver Projeto'"></span>
-                            <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="https://parisperfumesimports.com/" target="_blank"
+                            class="inline-flex items-center gap-2 text-sm accent-text hover:opacity-70 transition-opacity">
+                            <i class="fas fa-external-link-alt text-xs"></i>
+                            <span x-text="language === 'en' ? 'Visit live site' : 'Visitar site'"></span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Scuba Diving -->
-                <div class="card rounded-2xl overflow-hidden">
-                    <img src="dist/images/projects/ocean-cleanup.png" alt="Limpeza do Oceno"
-                        class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Limpeza do Oceano</h3>
-                        <p class="text-gray-400 mb-4" x-text="language === 'en' ? 
-                        'Educational game promoting environmental awareness' : 
-                        'Jogo educativo promovendo consciência ambiental'"></p>
+                <!-- Combinador de Holerites -->
+                <div class="card rounded-2xl overflow-hidden flex flex-col">
+                    <div class="proj-header proj-holerites h-44 flex items-center justify-center">
+                        <i class="fas fa-file-pdf text-5xl text-green-400/30"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-base font-bold text-white mb-2"
+                            x-text="language === 'en' ? 'Payslip Combiner' : 'Combinador de Holerites'"></h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-1 leading-relaxed"
+                            x-text="language === 'en'
+                                ? 'Python automation to combine and organize multiple payslip PDFs, eliminating manual processing.'
+                                : 'Automação em Python para combinar e organizar múltiplos PDFs de holerites, eliminando o processamento manual.'"></p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">PDF Automation</span>
+                        </div>
+                        <a href="https://github.com/paulo-moretti/Combinador-de-Holerites-Automacao-de-PDFs" target="_blank"
+                            class="inline-flex items-center gap-2 text-sm accent-text hover:opacity-70 transition-opacity">
+                            <i class="fab fa-github"></i>
+                            <span x-text="language === 'en' ? 'View on GitHub' : 'Ver no GitHub'"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Rodrigo Pereira Videomaker -->
+                <div class="card rounded-2xl overflow-hidden flex flex-col">
+                    <div class="proj-header proj-rodrigo h-44 flex items-center justify-center">
+                        <i class="fas fa-video text-5xl text-purple-400/30"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-base font-bold text-white mb-2">Rodrigo Pereira Videomaker</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-1 leading-relaxed"
+                            x-text="language === 'en'
+                                ? 'Portfolio website for a professional videomaker showcasing services and work history. Fully responsive.'
+                                : 'Site de portfólio para videomaker profissional com apresentação de serviços e trabalhos realizados. Totalmente responsivo.'"></p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                        <a href="https://www.rodrigopereiravideomaker.com.br/" target="_blank"
+                            class="inline-flex items-center gap-2 text-sm accent-text hover:opacity-70 transition-opacity">
+                            <i class="fas fa-external-link-alt text-xs"></i>
+                            <span x-text="language === 'en' ? 'Visit live site' : 'Visitar site'"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ocean Cleanup -->
+                <div class="card rounded-2xl overflow-hidden flex flex-col">
+                    <img src="dist/images/projects/ocean-cleanup.png" alt="Ocean Cleanup" class="w-full h-44 object-cover">
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-base font-bold text-white mb-2"
+                            x-text="language === 'en' ? 'Ocean Cleanup Game' : 'Limpeza do Oceano'"></h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-1 leading-relaxed"
+                            x-text="language === 'en'
+                                ? 'Educational game about ocean cleanup and environmental awareness, built in Java with Slick2D.'
+                                : 'Jogo educativo sobre limpeza dos oceanos e consciência ambiental, desenvolvido em Java com Slick2D.'"></p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Game Dev</span>
                             <span class="skill-tag">Slick2D</span>
+                            <span class="skill-tag">Game Dev</span>
                         </div>
                         <a href="https://github.com/paulo-moretti/OceanCleanup-Game" target="_blank"
-                            class="inline-flex items-center text-white hover:text-gray-300">
-                            <span x-text="language === 'en' ? 'View Project' : 'Ver Projeto'"></span>
-                            <i class="fas fa-arrow-right ml-2"></i>
+                            class="inline-flex items-center gap-2 text-sm accent-text hover:opacity-70 transition-opacity">
+                            <i class="fab fa-github"></i>
+                            <span x-text="language === 'en' ? 'View on GitHub' : 'Ver no GitHub'"></span>
                         </a>
                     </div>
                 </div>
 
-                <!-- PFA -->
-                <div class="card rounded-2xl overflow-hidden">
-                    <img src="dist/images/projects/traslate-pdf.png" alt="PFA" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Tradutor PDF</h3>
-                        <p class="text-gray-400 mb-4" x-text="language === 'en' ? 
-                        'PDF Translator' : 
-                        'Tradutor de PDF'"></p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Flask</span>
-                            <span class="skill-tag">Bootstrap</span>
-                        </div>
-                        <a href="https://github.com/paulo-moretti/" target="_blank"
-                            class="inline-flex items-center text-white hover:text-gray-300">
-                            <span x-text="language === 'en' ? 'View Project' : 'Ver Projeto'"></span>
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Contact Section -->
-
-    <section id="contact" class="py-12">
+    <!-- Certifications -->
+    <section id="certifications" class="py-20">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-16 gradient-text text-center"
-                x-text="language === 'en' ? 'Get in Touch' : 'Contato'"></h2>
+            <h2 class="text-4xl font-bold mb-4 gradient-text text-center"
+                x-text="language === 'en' ? 'Certifications & Courses' : 'Certificações & Cursos'"></h2>
+            <p class="text-center text-gray-500 text-sm mb-16"
+                x-text="language === 'en' ? 'Continuous learning and professional development' : 'Aprendizado contínuo e desenvolvimento profissional'"></p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
-                <a href="mail:pauloeduardo.sm20@gmail.com"
-                    class="card p-8 rounded-2xl text-center hover:scale-105 transition-transform duration-300">
-                    <i class="fas fa-envelope text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Email</h3>
-                    <p class="text-gray-400 text-xs">pauloeduardo.sm20@gmail.com</p>
+            <div class="grid md:grid-cols-3 gap-4">
+
+                <div class="cert-badge">
+                    <div class="flex items-start gap-3">
+                        <div class="cert-icon-wrap flex-shrink-0">
+                            <i class="fas fa-server accent-text text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-sm">DevOps & Agile Culture</p>
+                            <p class="text-gray-500 text-xs mt-1">FIAP · 2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-badge">
+                    <div class="flex items-start gap-3">
+                        <div class="cert-icon-wrap flex-shrink-0">
+                            <i class="fas fa-network-wired accent-text text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-sm"
+                                x-text="language === 'en' ? 'IT Infrastructure Management' : 'Gestão de Infraestrutura de TI'"></p>
+                            <p class="text-gray-500 text-xs mt-1">FIAP · 2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-badge">
+                    <div class="flex items-start gap-3">
+                        <div class="cert-icon-wrap flex-shrink-0">
+                            <i class="fab fa-aws accent-text text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-sm">Cloud Fundamentals, Administration & Solution Architect</p>
+                            <p class="text-gray-500 text-xs mt-1">FIAP · 2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-badge">
+                    <div class="flex items-start gap-3">
+                        <div class="cert-icon-wrap flex-shrink-0">
+                            <i class="fab fa-aws accent-text text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-sm">Getting Started with DevOps</p>
+                            <p class="text-gray-500 text-xs mt-1">AWS · 2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-badge">
+                    <div class="flex items-start gap-3">
+                        <div class="cert-icon-wrap flex-shrink-0">
+                            <i class="fas fa-university accent-text text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-sm">CS50 — Computer Science</p>
+                            <p class="text-gray-500 text-xs mt-1">Harvard University · 2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-badge">
+                    <div class="flex items-start gap-3">
+                        <div class="cert-icon-wrap flex-shrink-0">
+                            <i class="fas fa-brain accent-text text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-sm"
+                                x-text="language === 'en' ? 'Artificial Intelligence (AI-900)' : 'Inteligência Artificial (AI-900)'"></p>
+                            <p class="text-gray-500 text-xs mt-1">Microsoft / SENAI · 2022</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-4 gradient-text text-center"
+                x-text="language === 'en' ? 'Get in Touch' : 'Contato'"></h2>
+            <p class="text-center text-gray-500 text-sm mb-16"
+                x-text="language === 'en'
+                    ? 'Open to new opportunities in infrastructure, automation and SRE.'
+                    : 'Aberto a novas oportunidades em infraestrutura, automação e SRE.'"></p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                <a href="mailto:pauloeduardo.sm20@gmail.com"
+                    class="card p-8 rounded-2xl text-center hover:border-cyan-500/30 transition-all duration-300">
+                    <i class="fas fa-envelope text-2xl mb-3 accent-text block"></i>
+                    <h3 class="font-bold mb-1 text-white text-sm">Email</h3>
+                    <p class="text-gray-500 text-xs">pauloeduardo.sm20@gmail.com</p>
                 </a>
 
                 <a href="https://github.com/paulo-moretti" target="_blank"
-                    class="card p-8 rounded-2xl text-center hover:scale-105 transition-transform duration-300">
-                    <i class="fab fa-github text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">GitHub</h3>
-                    <p class="text-gray-400">@paulo-moretti</p>
+                    class="card p-8 rounded-2xl text-center hover:border-cyan-500/30 transition-all duration-300">
+                    <i class="fab fa-github text-2xl mb-3 accent-text block"></i>
+                    <h3 class="font-bold mb-1 text-white text-sm">GitHub</h3>
+                    <p class="text-gray-500 text-xs">@paulo-moretti</p>
                 </a>
 
                 <a href="https://www.linkedin.com/in/paulo-eduardo-moretti-a9845924b" target="_blank"
-                    class="card p-8 rounded-2xl text-center hover:scale-105 transition-transform duration-300">
-                    <i class="fab fa-linkedin text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">LinkedIn</h3>
-                    <p class="text-gray-400">@paulo-eduardo-moretti</p>
+                    class="card p-8 rounded-2xl text-center hover:border-cyan-500/30 transition-all duration-300">
+                    <i class="fab fa-linkedin text-2xl mb-3 accent-text block"></i>
+                    <h3 class="font-bold mb-1 text-white text-sm">LinkedIn</h3>
+                    <p class="text-gray-500 text-xs">@paulo-eduardo-moretti</p>
                 </a>
-            </div>
-
-            <div class="mt-16 text-center">
-                <p class="text-gray-400 text-lg">
-                    <span x-text="language === 'en' ? 
-                        'Let's work together to create something amazing!' : 
-                        'Vamos trabalhar juntos para criar algo incrível!'"></span>
-                </p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-white/5">
+    <footer class="py-10 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="grid md:grid-cols-2 gap-6 items-center">
                 <div>
-                    <h3 class="text-2xl font-bold mb-4 gradient-text">PM</h3>
-                    <p class="text-gray-400">
-                        <span x-text="language === 'en' ? 
-                            'Full-Stack Developer passionate about creating amazing digital experiences.' : 
-                            'Desenvolvedor Full-Stack apaixonado por criar experiências digitais incríveis.'"></span>
-                    </p>
+                    <h3 class="text-xl font-bold mb-1 gradient-text">PM</h3>
+                    <p class="text-gray-600 text-sm"
+                        x-text="language === 'en'
+                            ? 'Developer focused on automation, infrastructure and DevOps.'
+                            : 'Desenvolvedor com foco em automação, infraestrutura e DevOps.'"></p>
                 </div>
-
-                <div class="flex justify-end space-x-6">
+                <div class="flex md:justify-end space-x-4">
                     <a href="https://github.com/paulo-moretti" target="_blank"
-                        class="text-gray-400 hover:text-white transition-colors">
+                        class="text-gray-600 hover:text-cyan-400 transition-colors duration-300">
                         <i class="fab fa-github text-xl"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/paulo-eduardo-moretti-a9845924b" target="_blank"
-                        class="text-gray-400 hover:text-white transition-colors">
+                        class="text-gray-600 hover:text-cyan-400 transition-colors duration-300">
                         <i class="fab fa-linkedin text-xl"></i>
                     </a>
                 </div>
             </div>
-
-            <div class="mt-8 text-center text-gray-400">
-                <p>© 2025 Paulo Moretti.
+            <div class="mt-6 text-center text-gray-700 text-xs">
+                <p>© 2026 Paulo Moretti.
                     <span x-text="language === 'en' ? 'All rights reserved.' : 'Todos os direitos reservados.'"></span>
                 </p>
             </div>
@@ -434,7 +872,5 @@
     </button>
 
     <script src="js/main_scripts.js"></script>
-
 </body>
-
 </html>

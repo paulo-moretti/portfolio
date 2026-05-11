@@ -1,141 +1,263 @@
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
-        * {
-            font-family: 'Manrope', sans-serif;
-        }
+* {
+    font-family: 'Manrope', sans-serif;
+}
 
-        .bg-gradient {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        }
+body {
+    background-color: #0f172a;
+}
 
-        .gradient-text {
-            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* ─── Nav ─── */
+.nav-bg {
+    background: linear-gradient(135deg, #0a1628 0%, #0f172a 100%);
+}
 
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
+/* ─── Typography ─── */
+.gradient-text {
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        .card:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
+.accent-text {
+    color: #38bdf8;
+}
 
-        .nav-link {
-            position: relative;
-            padding: 0.5rem 1rem;
-            color: #94a3b8;
-            transition: color 0.3s ease;
-        }
+/* ─── Card ─── */
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: all 0.3s ease;
+}
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 100%;
-            height: 1px;
-            background: #ffffff;
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
+.card:hover {
+    border-color: rgba(56, 189, 248, 0.22);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(56, 189, 248, 0.05);
+}
 
-        .nav-link:hover {
-            color: #ffffff;
-        }
+/* ─── Nav link ─── */
+.nav-link {
+    position: relative;
+    padding: 0.5rem 0.6rem;
+    color: #94a3b8;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
 
-        .nav-link:hover::after {
-            transform: scaleX(1);
-        }
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0.6rem;
+    right: 0.6rem;
+    bottom: -2px;
+    height: 1px;
+    background: #38bdf8;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
 
-        .language-switcher {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 9999px;
-        }
+.nav-link:hover {
+    color: #38bdf8;
+}
 
-        .language-button {
-            padding: 0.5rem 1rem;
-            color: #94a3b8;
-            transition: all 0.3s ease;
-        }
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
 
-        .language-button.active {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 9999px;
-        }
+/* ─── Language switcher ─── */
+.language-switcher {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+}
 
-        .skill-tag {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 9999px;
-            padding: 0.5rem 1rem;
-            color: #94a3b8;
-            transition: all 0.3s ease;
-        }
+.language-button {
+    padding: 0.4rem 0.9rem;
+    color: #94a3b8;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+}
 
-        .skill-tag:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-        }
+.language-button.active {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+    border-radius: 9999px;
+}
 
-        .profile-gradient {
-            background: radial-gradient(circle at 50% 50%,
-                    rgba(59, 130, 246, 0.15) 0%,
-                    rgba(37, 99, 235, 0.1) 25%,
-                    transparent 50%);
-        }
+/* ─── Skill tag ─── */
+.skill-tag {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 9999px;
+    padding: 0.25rem 0.7rem;
+    color: #94a3b8;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
 
-        .scroll-indicator {
-            position: fixed;
-            right: 2rem;
-            bottom: 2rem;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-        }
+.skill-tag:hover {
+    background: rgba(56, 189, 248, 0.07);
+    border-color: rgba(56, 189, 248, 0.22);
+    color: #38bdf8;
+}
 
-        .scroll-indicator.visible {
-            opacity: 1;
-            visibility: visible;
-        }
+/* ─── Skill category icon ─── */
+.skill-icon-wrap {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+}
 
-        .scroll-indicator:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
+/* ─── Hero ─── */
+.profile-gradient {
+    background: radial-gradient(
+        circle at 50% 40%,
+        rgba(56, 189, 248, 0.07) 0%,
+        rgba(56, 189, 248, 0.03) 35%,
+        transparent 65%
+    );
+}
 
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
+.shadow-profile {
+    box-shadow: 0 0 48px rgba(56, 189, 248, 0.14);
+}
 
-            50% {
-                transform: translateY(-10px);
-            }
+/* ─── Timeline ─── */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
 
-            100% {
-                transform: translateY(0px);
-            }
-        }
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        rgba(56, 189, 248, 0.35),
+        rgba(56, 189, 248, 0.08) 80%,
+        transparent
+    );
+}
 
-        .float {
-            animation: float 4s ease-in-out infinite;
-        }
+.timeline-item {
+    position: relative;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -2.37rem;
+    top: 1.35rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.55);
+}
+
+/* ─── Result highlight box ─── */
+.result-box {
+    background: rgba(56, 189, 248, 0.04);
+    border: 1px solid rgba(56, 189, 248, 0.12);
+}
+
+/* ─── Certifications ─── */
+.cert-badge {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 0.875rem;
+    padding: 1rem 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.cert-badge:hover {
+    border-color: rgba(56, 189, 248, 0.2);
+    background: rgba(56, 189, 248, 0.03);
+    transform: translateY(-1px);
+}
+
+.cert-icon-wrap {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ─── In-dev badge ─── */
+.badge-dev {
+    background: rgba(234, 179, 8, 0.08);
+    border-color: rgba(234, 179, 8, 0.22);
+    color: #eab308;
+    font-size: 0.65rem;
+}
+
+/* ─── Project header gradients ─── */
+.proj-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.proj-organizze {
+    background: linear-gradient(135deg, #0c1b30 0%, #0f2040 50%, #091525 100%);
+}
+
+.proj-paris {
+    background: linear-gradient(135deg, #1c1000 0%, #2c1c00 50%, #1c1000 100%);
+}
+
+.proj-holerites {
+    background: linear-gradient(135deg, #041a0a 0%, #062d10 50%, #041a0a 100%);
+}
+
+.proj-rodrigo {
+    background: linear-gradient(135deg, #150828 0%, #210d40 50%, #150828 100%);
+}
+
+/* ─── Scroll to top ─── */
+.scroll-indicator {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #38bdf8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scroll-indicator.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-indicator:hover {
+    background: rgba(56, 189, 248, 0.16);
+    transform: translateY(-2px);
+}
